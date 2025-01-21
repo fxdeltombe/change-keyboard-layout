@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US → FR keyboard layout hexadecimal converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input[type="text"] {
+      width: 400px;
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+If your computer is configured with French keyboard layout but you have an HID device (e.g. a barcode scanner) configured as an English keyboard, you can convert the barcode returned into the correct data.
+    <br>
+Turn your keyboard into French layout, then type any numeric keys (without shift) on your keyboard.
+  </div>
+  <input type="text" placeholder="Type here, it will not be converted">
+  <input type="text" placeholder="Type here, it will be converted" id="inputField">
+  <script src="change-keyboard-layout.js"></script>
+  <script>
+    const usToFrHexMap = {
+      '&': '1',
+      'é': '2',
+      '"': '3',
+      '\'': '4',
+      '(': '5',
+      '-': '6',
+      'è': '7',
+      '_': '8',
+      'ç': '9',
+      'à': '0',
+    };
+    const inputField = document.getElementById('inputField');
+    changeKeyboardLayout(inputField, usToFrHexMap, /^[0-9]$/);
+  </script>
+</body>
+</html>
