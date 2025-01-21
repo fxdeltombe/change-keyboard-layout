@@ -13,7 +13,7 @@ To replace all '1' typed with '2' :
   <script src="change-keyboard-layout.js"></script>
   <script>
     const inputField = document.getElementById('inputField');
-    switchKeyboardLayout(inputField, {'1': '2'});
+    changeKeyboardLayout(inputField, {'1': '2'});
   </script>
 </body>
 </html>
